@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#080808" />
+  <title>Hero Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#accueil" data-route="accueil">
+      <span class="brand-mark">H</span><span>HERO TRAINING<small>ヒーロートレーニング</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+    <nav id="mainNav">
+      <a href="#accueil" data-route="accueil">ACCUEIL</a>
+      <a href="#programmes" data-route="programmes">PROGRAMMES</a>
+      <a href="#coaching" data-route="coaching">COACHING</a>
+      <a href="calculateur.html">CALCULATEUR DE CALORIES</a>
+      <a href="#apropos" data-route="apropos">À PROPOS</a>      <a class="btn btn-primary" href="#commencer" data-route="commencer">COMMENCER</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section class="hero hero-reference-page snap" id="accueil" aria-label="Accueil Hero Training">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-hotspots" aria-label="Raccourcis de la page d’accueil">
+        <a class="hotspot hs-title" href="#commencer" aria-label="Commencer"></a>
+        <a class="hotspot hs-mass" href="#programmes" data-goal-link="Prise de muscle" aria-label="Prise de masse"></a>
+        <a class="hotspot hs-loss" href="#programmes" data-goal-link="Perte de poids" aria-label="Perte de poids"></a>
+        <a class="hotspot hs-power" href="#programmes" aria-label="Force et puissance"></a>
+        <a class="hotspot hs-recomp" href="#programmes" aria-label="Recomposition corporelle"></a>
+        <a class="hotspot hs-condition" href="#programmes" aria-label="Condition physique générale"></a>
+        <a class="hotspot hs-programs" href="#programmes" aria-label="Voir les programmes"></a>
+        <a class="hotspot hs-objectifs" href="#commencer" aria-label="Objectifs personnalisés"></a>
+        <a class="hotspot hs-adaptes" href="#programmes" aria-label="Programmes adaptés"></a>
+        <a class="hotspot hs-suivi" href="#dashboard" aria-label="Suivi et résultats"></a>
+        <a class="hotspot hs-discipline" href="#coaching" aria-label="Discipline et mentalité"></a>
+      </div>
+    </section>
+
+    <section class="section snap" id="programmes">
+      <div class="section-head reveal"><p class="eyebrow">PROGRAMMES</p><h2>Choisis un objectif. Garde le parcours simple.</h2><p>3 ou 4 séances par semaine, sur environ 4 mois. Pas de niveau à choisir avant de commencer : les adaptations sont intégrées aux exercices.</p></div>
+      <div class="cards three">
+        <button class="goal-card reveal" data-goal="Perte de poids"><span>01</span><h3>Perte de poids</h3><p>Cardio, renforcement, nutrition et compréhension du déficit.</p><b>CHOISIR →</b></button>
+        <button class="goal-card reveal" data-goal="Prise de muscle"><span>02</span><h3>Prise de muscle</h3><p>Musculation, surcharge progressive, récupération et nutrition.</p><b>CHOISIR →</b></button>
+        <button class="goal-card reveal" data-goal="Remise en forme"><span>03</span><h3>Remise en forme</h3><p>Renforcement, cardio, mobilité et habitudes durables.</p><b>CHOISIR →</b></button>
+      </div>
+    </section>
+
+    <section class="section dark-grid snap" id="commencer">
+      <div class="section-head reveal"><p class="eyebrow">COMMENCER</p><h2>Ton programme en 3 choix</h2></div>
+      <div class="wizard reveal">
+        <div class="steps"><i class="active"></i><i></i><i></i></div>
+        <div id="wizardBody"></div>
+      </div>
+    </section>
+
+    <section class="section snap" id="apprendre">
+      <div class="section-head reveal"><p class="eyebrow">APPRENDRE</p><h2>Comprendre le pourquoi du comment.</h2><p>Des contenus courts à parcourir, avec des fiches détaillées quand tu veux aller plus loin.</p></div>
+      <div class="cards four" id="knowledgeCards"></div>
+    </section>
+
+    <section class="section nutrition snap" id="nutrition">
+      <div class="section-head reveal"><p class="eyebrow">NUTRITION</p><h2>Comprendre tes besoins, puis observer la réalité.</h2><p>Les calculs sont des estimations de départ. L’évolution réelle sur plusieurs semaines permet ensuite d’ajuster progressivement.</p></div>
+      <div class="nutrition-layout">
+        <form class="calculator glass reveal" id="bmrForm">
+          <h3>Calculateur de métabolisme</h3>
+          <div class="segmented"><label><input type="radio" name="sex" value="male" checked><span>Homme</span></label><label><input type="radio" name="sex" value="female"><span>Femme</span></label></div>
+          <div class="field-grid">
+            <label>Âge<input name="age" type="number" min="14" max="100" value="30"></label>
+            <label>Taille (cm)<input name="height" type="number" min="120" max="230" value="180"></label>
+            <label>Poids (kg)<input name="weight" type="number" min="35" max="300" step=".1" value="75"></label>
+          </div>
+          <label>Niveau d'activité<select name="activity" id="activity">
+            <option value="1.2">Sédentaire — × 1,20</option>
+            <option value="1.375">Légèrement actif — × 1,375</option>
+            <option value="1.55" selected>Actif — × 1,55</option>
+            <option value="1.725">Très actif — × 1,725</option>
+            <option value="1.9">Extrêmement actif — × 1,90</option>
+          </select></label>
+          <p class="hint" id="activityHint"></p>
+          <button class="btn btn-primary" type="submit">CALCULER</button>
+        </form>
+        <div class="result-panel glass reveal">
+          <p class="eyebrow">ESTIMATION</p><h3 id="bmrValue">— kcal</h3><p>Métabolisme de base : énergie dépensée au repos pour assurer les fonctions vitales.</p>
+          <div class="energy-bars" id="energyBars"></div>
+          <div class="tdee"><small>DÉPENSE QUOTIDIENNE ESTIMÉE</small><strong id="tdeeValue">— kcal</strong></div>
+          <div class="protein-box">
+            <small>PROTÉINES · FOURCHETTE QUOTIDIENNE</small>
+            <strong id="proteinRange">— g / jour</strong>
+            <p id="proteinNote">Le bas de la fourchette est déjà très bien. Essaie de t’en rapprocher progressivement, sans pression.</p>
+          </div>
+          <p class="formula">Métabolisme de base × coefficient d’activité = dépense énergétique quotidienne estimée. Les valeurs restent des estimations de départ.</p>
+        </div>
+      </div>
+      <div class="food-space reveal"><div><p class="eyebrow">PLATS & EXEMPLES</p><h3>Une galerie prévue pour tes propres photos.</h3><p>Ajoute ici tes plats, exemples de repas, portions, idées nutritionnelles et visuels depuis l’administration.</p></div><button class="btn btn-ghost" data-admin-jump="media">GÉRER LES IMAGES</button></div>
+    </section>
+
+    <section class="section snap" id="dashboard">
+      <div class="section-head reveal"><p class="eyebrow">ESPACE CLIENT</p><h2>Ta progression, au même endroit.</h2></div>
+      <div class="dashboard-grid">
+        <div class="glass progress-card reveal"><small>PRISE DE MUSCLE · SALLE · 3 SÉANCES</small><h3>Semaine <span>5/16</span></h3><div class="progress"><i style="width:31%"></i></div><div class="session-row"><span>Séance 1 <b>✓</b></span><span>Séance 2 <b>✓</b></span><span>Séance 3 ○</span></div><button class="btn btn-primary">CONTINUER MON PROGRAMME</button></div>
+        <div class="glass reveal"><p class="eyebrow">CARNET</p><h3>Développé couché</h3><p>Objectif : 8–12 répétitions</p><div class="log-row"><input placeholder="70 kg"><input placeholder="12 reps"><input placeholder="10 reps"><input placeholder="9 reps"></div><button class="btn btn-ghost" id="saveLog">ENREGISTRER</button><small id="logStatus"></small></div>
+        <div class="glass reveal"><p class="eyebrow">BESOIN D’AIDE ?</p><h3>Tu peux poser une question.</h3><p>Le contexte du programme, de la semaine, de la séance et de l’exercice peut être joint automatiquement.</p><button class="btn btn-ghost" id="questionBtn">J’AI UNE QUESTION</button></div>
+      </div>
+    </section>
+
+    <section class="section snap" id="exercices">
+      <div class="section-head reveal"><p class="eyebrow">FICHES D’EXERCICES</p><h2>Rapides à la salle. Complètes quand tu veux apprendre.</h2></div>
+      <div class="phone-demo reveal">
+        <div class="phone">
+          <div class="phone-top">SÉANCE 1 <span>•••</span></div>
+          <div class="exercise-visual"><span>TA VIDÉO / TES IMAGES</span></div>
+          <h3>Développé couché</h3><div class="quick-stats"><b>3 séries</b><b>8–12 reps</b><b>2 min repos</b></div>
+          <ul><li>Omoplates stables</li><li>Contrôle la descente</li><li>Garde une amplitude adaptée</li></ul>
+          <button class="btn btn-primary wide" data-modal="exercise">VOIR L’EXPLICATION COMPLÈTE</button>
+        </div>
+        <div class="phone-copy"><h3>Deux niveaux de lecture</h3><p><b>Mode rapide :</b> mouvement, consignes, séries, répétitions et repos en quelques secondes.</p><p><b>Mode complet :</b> pourquoi l’exercice, zones travaillées, erreurs, progression et adaptations.</p><p>Une seule fiche peut être réutilisée dans plusieurs programmes, articles et liens pédagogiques.</p></div>
+      </div>
+    </section>
+
+    <section class="section premium snap" id="coaching">
+      <div class="section-head reveal"><p class="eyebrow">COACHING</p><h2>Pour les objectifs qui demandent plus de personnalisation.</h2><p>Programmation individualisée, ajustements réguliers, objectifs spécifiques et suivi plus poussé. Le programme standard reste accompagné, mais ne constitue pas un coaching individuel illimité.</p><button class="btn btn-primary">DEMANDER UN COACHING</button></div>
+    </section>
+
+    <section class="section snap" id="apropos">
+      <div class="section-head reveal"><p class="eyebrow">À PROPOS</p><h2>4 mois pour apprendre, appliquer et progresser.</h2><p>Des bases pour continuer bien au-delà du programme. Le but n’est pas de promettre un physique idéal en quelques semaines, mais de transmettre une méthode compréhensible et durable.</p></div>
+      <div class="journey reveal"><span>COMPRENDRE</span><b>→</b><span>S’ENTRAÎNER</span><b>→</b><span>PROGRESSER</span><b>→</b><span>DEVENIR AUTONOME</span></div>
+    </section>
+
+    <section class="section admin snap" id="admin">
+      <div class="section-head reveal"><p class="eyebrow">ADMINISTRATION · DÉMO</p><h2>Le contenu n’est pas prisonnier du code.</h2><p>Cette maquette montre l’architecture d’administration. En production, les données, comptes, médias et permissions seront reliés à Supabase.</p></div>
+      <div class="admin-shell reveal">
+        <aside id="adminTabs"></aside>
+        <div class="admin-main" id="adminMain"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal" aria-hidden="true"><div class="modal-card"><button class="modal-close" id="modalClose">×</button><div id="modalBody"></div></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

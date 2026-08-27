@@ -1,0 +1,188 @@
+<a href="calculateur.html">CALCULATEUR</a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur nutritionnel | Hero Training</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nutrition-page">
+
+<header class="nutrition-header">
+    <a href="index.html" class="nutrition-back">← ACCUEIL</a>
+
+    <div>
+        <strong>HERO TRAINING</strong>
+        <span>CALCULATEUR NUTRITIONNEL</span>
+    </div>
+</header>
+
+<main class="nutrition-app">
+
+    <section class="nutrition-intro">
+        <span class="nutrition-label">NUTRITION</span>
+
+        <h1>
+            TON ALIMENTATION.<br>
+            <em>PLUS SIMPLE.</em>
+        </h1>
+
+        <p>
+            Recherche tes aliments, scanne tes produits et construis
+            ton journal alimentaire. Les calories sont un repère :
+            protéines, glucides, lipides, fibres et autres informations
+            nutritionnelles sont également affichés.
+        </p>
+    </section>
+
+    <section class="daily-summary">
+
+        <div class="summary-main">
+            <span>AUJOURD'HUI</span>
+            <strong id="totalCalories">0</strong>
+            <small>kcal consommées</small>
+        </div>
+
+        <div class="macro">
+            <strong id="totalProtein">0 g</strong>
+            <span>PROTÉINES</span>
+        </div>
+
+        <div class="macro">
+            <strong id="totalCarbs">0 g</strong>
+            <span>GLUCIDES</span>
+        </div>
+
+        <div class="macro">
+            <strong id="totalFat">0 g</strong>
+            <span>LIPIDES</span>
+        </div>
+
+        <div class="macro">
+            <strong id="totalFiber">0 g</strong>
+            <span>FIBRES</span>
+        </div>
+
+    </section>
+
+
+    <section class="food-tools">
+
+        <button class="food-tool active" data-mode="search">
+            <span>⌕</span>
+            <strong>RECHERCHER</strong>
+            <small>Aliment ou marque</small>
+        </button>
+
+        <button class="food-tool" data-mode="barcode">
+            <span>▥</span>
+            <strong>CODE-BARRES</strong>
+            <small>Scanner un produit</small>
+        </button>
+
+        <button class="food-tool" data-mode="photo">
+            <span>◉</span>
+            <strong>PHOTO DU REPAS</strong>
+            <small>Estimation assistée</small>
+        </button>
+
+    </section>
+
+
+    <section class="food-search">
+
+        <div class="search-box">
+            <input
+                id="foodSearch"
+                type="search"
+                placeholder="Banane, poulet, pain de mie..."
+                autocomplete="off"
+            >
+            <button id="searchFoodButton">RECHERCHER</button>
+        </div>
+
+        <div id="foodResults" class="food-results">
+
+            <article class="food-result"
+                data-name="Banane"
+                data-calories="89"
+                data-protein="1.1"
+                data-carbs="22.8"
+                data-fat="0.3"
+                data-fiber="2.6">
+
+                <div>
+                    <strong>BANANE</strong>
+                    <span>Aliment générique · pour 100 g</span>
+                </div>
+
+                <div class="food-kcal">
+                    <strong>89</strong>
+                    <span>kcal</span>
+                </div>
+
+                <button class="add-food">AJOUTER</button>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section class="meal-journal">
+
+        <div class="journal-title">
+            <span>JOURNAL</span>
+            <h2>Mes repas</h2>
+        </div>
+
+        <article class="meal-card">
+            <div>
+                <span>MATIN</span>
+                <h3>Petit-déjeuner</h3>
+            </div>
+
+            <strong id="breakfastCalories">0 kcal</strong>
+            <button class="meal-add" data-meal="Petit-déjeuner">+</button>
+        </article>
+
+        <article class="meal-card">
+            <div>
+                <span>MIDI</span>
+                <h3>Déjeuner</h3>
+            </div>
+
+            <strong>0 kcal</strong>
+            <button class="meal-add" data-meal="Déjeuner">+</button>
+        </article>
+
+        <article class="meal-card">
+            <div>
+                <span>SOIR</span>
+                <h3>Dîner</h3>
+            </div>
+
+            <strong>0 kcal</strong>
+            <button class="meal-add" data-meal="Dîner">+</button>
+        </article>
+
+        <article class="meal-card">
+            <div>
+                <span>LIBRE</span>
+                <h3>Collations</h3>
+            </div>
+
+            <strong>0 kcal</strong>
+            <button class="meal-add" data-meal="Collations">+</button>
+        </article>
+
+    </section>
+
+</main>
+
+<script src="nutrition.js"></script>
+
+</body>
+</html>
